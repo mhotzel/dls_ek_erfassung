@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>DLS - EK-Erfassung - Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/static/main.css'>
+    <script src='/static/main.js'></script>
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <div>
+                <img src="/static/logo.png" width="300px">
+                <p>Unser Dorfladen Schlichten<br />
+                    EK-Erfassung</p>
+            </div>
+        </header>
+        <nav>
+            <p class="link"><a href="/login">Abmelden</a></p>
+            <p class="link"><a href="">Lieferanten</a></p>
+            <p class="link"><a href="">Rechnungen</a></p>
+            <p class="link"><a href="">Export</a></p>
+        </nav>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <ul class="messages">
+                <li>&nbsp;</li>
+            </ul>
+            {% endif %}
+            {% endwith %}
+        <main>
+            <div class="login">
+                <form name="loginform" method="post" action="/login">
+                    <label for="username">Benutzername:</label><br />
+                    <input type="text" id="username" name="username" /><br />
+                    <label for="password">Passwort:</label><br />
+                    <input type="password" id="password" name="password" /><br />
+                    <input type="submit" value="Anmelden">
+                </form>
+            </div>
+        </main>
+        <div class="right">
+            
+        </div>
+        <footer>
+            <p>&copy; 2024 Unser Dorfladen Schlichten eG</p>
+        </footer>
+    </div>
+</body>
+
+</html>

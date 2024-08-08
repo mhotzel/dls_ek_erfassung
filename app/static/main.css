@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+}
+
+html {
+    background-color: white;
+}
+
+.content {
+    height: 100%;
+    display: grid;
+    grid-template-columns: minmax(200px, max-content) auto auto;
+    grid-template-rows: min-content min-content 1fr min-content;
+    grid-template-areas:
+        "head head head"
+        "nav messages messages"
+        "nav content content"
+        "foot foot foot";
+}
+
+header {
+    background-color: rgb(142, 190, 68);
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem;
+    grid-area: head;
+}
+
+nav {
+    background-color: lightgrey;
+    grid-area: nav;
+    margin: 2px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.messages {
+    background-color: lightblue;
+    padding: 0.5rem;
+    list-style-type: none;
+    grid-area: messages;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+main {
+    background-color: white;
+    grid-area: content;
+
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;
+    grid-template-rows: min-content 1fr min-content 1fr;
+
+    height: 100%;
+}
+
+footer {
+    border-top: 1px solid gray;
+    background-color: white;
+    grid-area: foot;
+}
+
+footer > p {
+    margin: 0.2rem;
+    padding: 0.2rem;
+    text-align: center;
+}
+
+form > * {
+    margin: 5px;
+}
+
+.login {
+    background-color: rgb(227, 227, 227);
+    border-radius: 10px;
+    padding: 0.5rem;
+    grid-row: 3;
+    grid-column: 2;
+}
+

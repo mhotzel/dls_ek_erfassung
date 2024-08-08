@@ -1,0 +1,13 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+
+.centered-div {
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
